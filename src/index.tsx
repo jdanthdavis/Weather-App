@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
+import GlobalStyles from "./GlobalStyles";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyles />
+    <Navbar />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
