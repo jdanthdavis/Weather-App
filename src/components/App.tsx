@@ -1,5 +1,10 @@
 import React, {FC, useState} from 'react';
-import './App.css';
+import {
+  WeatherAppWrapper,
+  SectionHeading,
+  AppAboutWrapper,
+  AboutAppText
+} from './App.elements';
 import {LocationSearch} from "./LocationSearch";
 import {LocationTable} from "./LocationTable";
 import {WeatherLocation} from "../model/Weather";
@@ -17,6 +22,7 @@ const App: FC = () => {
     setError('');
     setWarning('');
   }
+  
 
   let addLocation = async (term: string) => {
     resetAlerts();
@@ -32,18 +38,25 @@ const App: FC = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Weather App</h1>
+    <WeatherAppWrapper>
+      <SectionHeading>Weather App</SectionHeading>
+        <AppAboutWrapper>
+          <AboutAppText>
+            This is my weather app that utilizes OpenWeather's API to pull the current and
+            forecast of any location you input. The search feature also checks for invalid locations and duplicate inputs.
+            Once you search for your location simply click on your location's name to load the current weather and forecasts!
+          </AboutAppText>
+        </AppAboutWrapper>
+      
+        <LocationSearch onSearch={addLocation}/>
+        <ErrorAlert message={error}/>
+        <WarningAlert message={warning}/>
+        <LocationTable locations={locations}
+                      current={currentLocation}
+                      onSelect={location => setCurrentLocation(location)}/>
+        <WeatherSummary location={currentLocation}/>
 
-      <LocationSearch onSearch={addLocation}/>
-      <ErrorAlert message={error}/>
-      <WarningAlert message={warning}/>
-      <LocationTable locations={locations}
-                     current={currentLocation}
-                     onSelect={location => setCurrentLocation(location)}/>
-
-      <WeatherSummary location={currentLocation}/>
-    </div>
+    </WeatherAppWrapper>
   );
 };
 

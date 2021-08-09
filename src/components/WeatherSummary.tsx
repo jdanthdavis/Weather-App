@@ -1,3 +1,9 @@
+import {
+  LocationNameWrapper,
+  WeatherSummaryWrapper,
+  WeatherEntryWrapper,
+  WeatherListWrapper
+} from './WeatherSummary.elements'
 import React, {FC, useEffect, useState} from "react";
 import {WeatherEntry} from "./WeatherEntry";
 import {Weather, WeatherLocation} from "../model/Weather";
@@ -28,10 +34,12 @@ export const WeatherSummary: FC<WeatherSummaryProps> = ({location}) => {
   if (!location || !weather || !forecast) return null;
 
   return (
-    <div>
-      <hr/>
-      <h2>{location.name}</h2>
-      <WeatherEntry weather={weather}/>
+    <div><br /><hr/> <br />
+    
+    <WeatherSummaryWrapper>
+      
+      <LocationNameWrapper>{location.name}</LocationNameWrapper>
+      <WeatherEntryWrapper><WeatherEntry weather={weather}/></WeatherEntryWrapper>
 
       <h2>Forecast</h2>
       <div>
@@ -43,6 +51,7 @@ export const WeatherSummary: FC<WeatherSummaryProps> = ({location}) => {
           )}
         </ol>
       </div>
+    </WeatherSummaryWrapper>
     </div>
   );
 };

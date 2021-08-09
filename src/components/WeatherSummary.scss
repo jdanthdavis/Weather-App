@@ -3,12 +3,13 @@ ol {
   
     li {
       border-right: 1px solid black;
-      padding: 10px;
+      padding: 0px;
       list-style-type: none;
       display: inline-block;
+      
   
       &:hover {
-        background: lightgray;
+        background: rgb(128, 120, 120);
       }
     }
   }

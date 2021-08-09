@@ -13,7 +13,7 @@ export const Nav = styled.nav`
 `
 export const NavLogo = styled.p`
     font-style: italic;
-    color: #F1F1E6;
+    color: #000000;
     justify-self: flex-start;
     text-decoration: none;
     font-size 2.1rem;

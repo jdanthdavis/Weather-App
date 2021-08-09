@@ -1,4 +1,6 @@
+
 import React, {FC, useState} from "react";
+import { WeatherSearchButton } from './App.elements'
 
 interface LocationSearchProps {
   onSearch: (search: string) => void;
@@ -16,13 +18,13 @@ export const LocationSearch: FC<LocationSearchProps> = ({onSearch}) => {
   return (
     <div>
       <label>
-        Add Location
-        <input className="ml-1 mr-1" type="text" value={locationSearch}
+        {/* Add Location */}
+        <input type="text" value={locationSearch}
                onChange={e => setLocationSearch(e.target.value)}/>
       </label>
-      <button className="btn btn-primary"
+      <WeatherSearchButton
               onClick={addLocation} disabled={disableSearch}>Search
-      </button>
+      </WeatherSearchButton>
     </div>
   );
 }

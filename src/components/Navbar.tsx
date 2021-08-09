@@ -26,7 +26,7 @@ const Navbar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 >
-                                    Home
+                                    Return to my site
                                 </ResumeLink>
                         </StyledLink>
                     </NavMenu>
