@@ -2,7 +2,6 @@ import {
   LocationNameWrapper,
   WeatherSummaryWrapper,
   WeatherEntryWrapper,
-  WeatherListWrapper
 } from './WeatherSummary.elements'
 import React, {FC, useEffect, useState} from "react";
 import {WeatherEntry} from "./WeatherEntry";

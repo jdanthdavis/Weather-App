@@ -7,8 +7,6 @@ import {
     StyledLink,
     ResumeLink
 } from './Navbar.elements'
-// import { Link } from 'react-scroll'
-// import { Link } from 'react-scroll'
 
 
 const Navbar = () => {
